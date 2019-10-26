@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+           <!--  <div class="card">
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
@@ -16,8 +16,40 @@
 
                     You are logged in!
                 </div>
-            </div>
+            </div> -->
+          <table class="table table-hover table-info">
+            <thead>
+              <tr>
+                <th scope="col">Account number</th>
+                <th scope="col">Account balance</th>
+              </tr>
+            </thead>
+            <tbody>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-hover table-active">
+            <thead>
+              <tr>
+                <th scope="col">Transfers to/from</th>
+                <th scope="col">Ammount</th>
+              </tr>
+            </thead>
+            <tbody>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
     </div>
+
 </div>
 @endsection
