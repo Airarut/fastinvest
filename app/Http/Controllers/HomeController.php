@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        $data = DB::table('user_account')
+            ->select(
+                DB::raw('balance'))
+            ->where('user_id', '=', $user->id)->get();
+        $balance = $data[0]->balance;
+        return view('home', ['balance' => $balance]);
+    }
+
+    public function transfer()
+    {
+        return view('user_account');
     }
 }

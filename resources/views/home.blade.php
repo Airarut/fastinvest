@@ -20,15 +20,16 @@
           <table class="table table-hover table-info">
             <thead>
               <tr>
-                <th scope="col">Account number</th>
+                <th scope="col">User id</th>
                 <th scope="col">Account balance</th>
               </tr>
             </thead>
             <tbody>
                 <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
+                      <tr>
+                        <td>{{Auth::user()->id}}</td>
+                        <td>{{$balance}}</td>
+                      </tr>
               </tr>
             </tbody>
           </table>
