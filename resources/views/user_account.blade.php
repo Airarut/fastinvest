@@ -21,14 +21,14 @@
 					      <div class="input-group-prepend">
 					        <span class="input-group-text">€</span>
 					      </div>
-					      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+					      <input type="text" class="form-control" name="amount" aria-label="Amount (to the nearest dollar)">
 					      <div class="input-group-append">
 					        <span class="input-group-text">.00</span>
 					      </div>
 					    </div>
 
 					    <label class="col-form-label col-form-label-lg" for="inputLarge">User account number(whom to transfer)</label>
-					  <input class="form-control form-control-lg" type="text" placeholder="user id" id="inputLarge">
+					  <input class="form-control form-control-lg" type="text" name="userId" placeholder="user id" id="inputLarge">
 					  </div>
 
 					  <button type="submit" class="btn btn-primary">Submit</button>

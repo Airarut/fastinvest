@@ -35,8 +35,29 @@ class HomeController extends Controller
         return view('home', ['balance' => $balance]);
     }
 
-    public function transfer()
+    public function userAccount() {
+        return view('user_account');
+    }
+
+    public function transfer(Request $request)
     {
+        $amount = (int)$request->input('amount');
+        $receivingUserId = (int)$request->input('userId');
+
+        $sendingUserId = Auth::user()->id;
+
+        $sendingUserAccount = DB::table('user_account')->where('user_id', '=', $sendingUserId)->get();
+
+        if ($sendingUserAccount[0]->balance > 0 && $sendingUserAccount[0]->balance - $amount >= 0) {
+            $sendingUser = DB::table('user_account')
+                ->where('user_id', '=', $sendingUserId) 
+                ->decrement('balance', $amount);
+
+            $receivingUser = DB::table('user_account')
+                ->where('user_id', '=', $receivingUserId)
+                ->increment('balance', $amount);
+        }
+
         return view('user_account');
     }
 }
